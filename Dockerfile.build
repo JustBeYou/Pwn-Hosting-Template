@@ -1,0 +1,13 @@
+ARG UBUNTU_VERSION
+
+FROM ubuntu:$UBUNTU_VERSION
+
+# install dependinces
+# add lib32z1 for 32-bit support
+RUN apt update && apt upgrade -y && apt install -y apt-utils build-essential libseccomp-dev libseccomp2
+
+WORKDIR /app
+
+COPY /conf/builder.sh /
+RUN ["chmod", "+x", "/builder.sh"]
+ENTRYPOINT ["/builder.sh"]
