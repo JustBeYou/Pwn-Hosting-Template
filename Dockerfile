@@ -5,7 +5,7 @@ FROM ubuntu:$UBUNTU_VERSION
 # install dependinces
 # add lib32z1 for 32-bit support
 # CUSTOMIZE: dependinces
-RUN apt update && apt upgrade -y && apt install -y apt-utils xinetd libseccomp2
+RUN apt update && apt upgrade -y && apt install -y xinetd libseccomp2
 
 # challenge user and home 
 ENV CHALL_USER=ctf
